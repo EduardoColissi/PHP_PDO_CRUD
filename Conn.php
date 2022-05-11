@@ -10,8 +10,15 @@ class Conn
 
     private static function Conectar()
     {
-        self::$Connect = new PDO('mysql:host=' . self::$Host . ';dbname=' . self::$Dbname, self::$User, self::$Pass);
-        return self::$Connect;
+        try {
+            if (self::$Connect == null) :
+                self::$Connect = new PDO('mysql:host=' . self::$Host . ';dbname=' . self::$Dbname, self::$User, self::$Pass);
+                return self::$Connect;
+            endif;
+        } catch (Exception $ex) {
+            echo 'Mensagem' . $ex->getMessage();
+            die;
+        }
     }
 
     public function getConn()
