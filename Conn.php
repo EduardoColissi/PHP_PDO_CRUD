@@ -23,6 +23,6 @@ class Conn
 
     public function getConn()
     {
-        self::Conectar();
+        return self::Conectar();
     }
 }
