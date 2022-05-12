@@ -1,0 +1,17 @@
+{
+    "name": "vendor_name/php_pdo_crud",
+    "description": "Projeto CRUD",
+    "authors": [
+        {
+        "name": "Eduardo",
+        "email": "eduardo.colissi@fazcomex.com.br"
+        }     
+    ],
+    "require":{},
+    "autoload": {
+        "psr-4": {
+            "Sts\\":"app/sts",
+            "Core\\": "core"
+        }
+    }
+}
