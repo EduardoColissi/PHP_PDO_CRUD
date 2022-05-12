@@ -11,6 +11,7 @@ session_start();
 
 <body>
     <h1>Cadastrar Usuário</h1>
+    <a href="index.php">Listar</a>
     <?php
     require './Conn.php';
 
