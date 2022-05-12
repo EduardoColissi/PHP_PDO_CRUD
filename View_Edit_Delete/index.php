@@ -11,6 +11,7 @@ session_start();
 
 <body>
     <h1>Listar usuários</h1>
+    <a href="cadastrar.php">Cadastrar</a>
     <?php
     if (isset($_SESSION['msg'])) :
         echo $_SESSION['msg'];
