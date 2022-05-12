@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,6 +12,11 @@
 <body>
     <h1>Listar usuários</h1>
     <?php
+    if (isset($_SESSION['msg'])) :
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    endif;
+
     require './Conn.php';
 
     $conn = new Conn();
@@ -28,6 +36,7 @@
         endif;
         echo "<a href='visualizar.php?id=" . $row_user['id'] . "'>Ver</a>";
         echo "<a href='editar.php?id=" . $row_user['id'] . "'>Editar</a>";
+        echo "<a href='apagar.php?id=" . $row_user['id'] . "'>Apagar</a>";
         echo "<hr>";
     endwhile;
     ?>
