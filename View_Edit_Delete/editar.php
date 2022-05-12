@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,9 +29,11 @@
         $resultado_up_user->bindParam(':id', $Dados['id']);
 
         if ($resultado_up_user->execute()) :
-            echo "<p style='color:green;'>Registro editado com sucesso</p>";
+            $_SESSION['msg'] = "<p style='color:green;'>Registro editado</p>";
+            header("Location: index.php");
         else :
-            echo "<p style='color:red;'>Registro não foi editado</p>";
+            $_SESSION['msg'] = "<p style='color:red;'>Registro não editado</p>";
+            header("Location: index.php");
         endif;
     endif;
 

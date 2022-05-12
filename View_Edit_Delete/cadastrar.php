@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +32,8 @@
         $cadastrar->execute();
 
         if ($cadastrar->rowCount()) :
-            echo "Cadastrado com sucesso!";
+            $_SESSION['msg'] = "<p style='color:green;'>Registro cadastrado</p>";
+            header("Location: index.php");
         endif;
     endif;
     ?>
