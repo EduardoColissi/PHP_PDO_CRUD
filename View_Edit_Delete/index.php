@@ -27,6 +27,7 @@
             echo "Alterado: " . date('d/m/Y H:i:s', strtotime($row_user['modified'])) . "<br>";
         endif;
         echo "<a href='visualizar.php?id=" . $row_user['id'] . "'>Ver</a>";
+        echo "<a href='editar.php?id=" . $row_user['id'] . "'>Editar</a>";
         echo "<hr>";
     endwhile;
     ?>
