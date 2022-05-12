@@ -1,5 +1,10 @@
 <?php
 
+namespace Sts\Models;
+
+use PDO;
+use FFI\Exception;
+
 class Conn
 {
     public static $Host = "localhost";
